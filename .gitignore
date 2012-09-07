@@ -12,12 +12,14 @@
 /temp/*
 
 /src/minecraft/*
+/src/.metadata/*
 /src/minecraft_server/*
 /src/common/*
-!/src/common/Fred4106/
+!/src/common/Magecraft/
 !/src/common/mcmod.info
 !/src/common/SP.png
 
 *.bat
 *.sh
 *.zip
+.metadata*
