@@ -87,3 +87,4 @@ YOU NEED TO DOWNLOAD MCP FROM THE WIKI IF YOU ARE UPDATING FROM MCP 4.3, UPDATEM
 + Rolling update model on top of the usual full package distrib
 + Custom files in bin directory are preserved during recompilation
 + Custom files are automaticly copied to reobf directory during reobf
+ 
