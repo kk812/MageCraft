@@ -9,6 +9,8 @@ import cpw.mods.fml.common.network.NetworkMod;
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class Magecraft_Main {
 
+	public static int BlockID = 230;
+	
 	@Init
 	public void load(FMLInitializationEvent event)
 	{
