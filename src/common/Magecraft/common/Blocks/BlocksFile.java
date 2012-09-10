@@ -29,6 +29,21 @@ public class BlocksFile extends Block{
 			case 1:
 				return 1;
 			case 2:
+				switch(par1)
+				{
+					case 0: //down
+						return 2;
+					case 1: //up
+						return 3;
+					case 2: //east
+						return 4;
+					case 3: //west
+						return 5;
+					case 4: //north
+						return 6;
+					case 5: //south
+						return 7;
+				}
 				return 2;
 		}
 		return 0;
