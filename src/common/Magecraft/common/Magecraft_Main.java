@@ -19,6 +19,8 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import Magecraft.common.Items.Magecraft_Items;
+import Magecraft.common.Blocks.BlocksFile;
 
 @Mod(modid = "FMC", name = "MageCraft", version = ".01 Alpha")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -29,20 +31,32 @@ public class Magecraft_Main {
 	public static Block blocks;
 	
 	
-	@SidedProxy(clientSide = "Magecraft.client.clientProxyMagecraft", serverSide = "Magecraft.common.commonProxyMagecraft")
-	public static commonProxyMagecraft proxy;
+	@SidedProxy(clientSide = "Magecraft.client.ClientProxyMagecraft", serverSide = "Magecraft.common.CommonProxyMagecraft")
+	public static CommonProxyMagecraft proxy;
 	
 	
 	@Init
 	public void load(FMLInitializationEvent event)
 	{
 		proxy.registerRenderThings();
-		blocks = new Magecraft.common.Blocks.BlocksFile(BlockID, 0, Material.rock).setStepSound(Block.soundStoneFootstep).setHardness(3F).setResistance(1.0F).setBlockName("blocks");;
+		Magecraft_Items.createInstance();
+		RecipeHandler.createInstance();
+		
+		
+		blocks = new BlocksFile(BlockID, 0, Material.rock).setStepSound(Block.soundStoneFootstep).setHardness(3F).setResistance(1.0F).setBlockName("blocks");;
 		Item.itemsList[BlockID] = new Magecraft.common.Blocks.MetaBlocks(BlockID-256, blocks).setItemName("Blocks");
 		
 		LanguageRegistry.instance().addStringLocalization("tile.blocks.Verinite Ore.name", "Verinite Ore");
 		LanguageRegistry.instance().addStringLocalization("tile.blocks.Verinite Block.name", "Verinite Block");
 		LanguageRegistry.instance().addStringLocalization("tile.blocks.OtherBlock.name", "OtherBlock");
+		
+		Magecraft_Items.getInstance().instantiateItems();
+		Magecraft_Items.getInstance().nameItems();
+		
+		RecipeHandler.getInstance().addCraftingTableRecipes();
+		RecipeHandler.getInstance().addShapelessRecipes();
+		RecipeHandler.getInstance().addFurnaceRecipes();
+		
 	}
 	
 }

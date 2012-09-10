@@ -1,6 +1,6 @@
 package Magecraft.common;
 
-public class commonProxyMagecraft 
+public class CommonProxyMagecraft 
 {
 	public void registerRenderThings()
     {

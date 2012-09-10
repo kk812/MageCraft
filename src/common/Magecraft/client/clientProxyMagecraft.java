@@ -1,9 +1,9 @@
 package Magecraft.client;
 
 import net.minecraftforge.client.MinecraftForgeClient;
-import Magecraft.common.commonProxyMagecraft;
+import Magecraft.common.CommonProxyMagecraft;
 
-public class clientProxyMagecraft extends commonProxyMagecraft
+public class ClientProxyMagecraft extends CommonProxyMagecraft
 {
 	@Override
     public void registerRenderThings()
