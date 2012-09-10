@@ -11,7 +11,7 @@ import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.ItemStack;
 import net.minecraft.src.Material;
 
-public class BlocksFile  extends Block{
+public class BlocksFile extends Block{
 
 	public BlocksFile(int par1, int par2, Material par3Material) 
 	{
