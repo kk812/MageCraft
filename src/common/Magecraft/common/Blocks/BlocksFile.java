@@ -44,11 +44,11 @@ public class BlocksFile extends Block{
 		switch(par1)
 		{
 			case 0:
-			return 0;
-		case 1:
-			return 1;
-		case 2:
-			return 2;
+				return 1;
+			case 1:
+				return 2;
+			case 2:
+				return 3;
 		}
 		return 0;
 	}

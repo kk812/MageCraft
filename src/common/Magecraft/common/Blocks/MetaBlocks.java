@@ -17,24 +17,7 @@ public class MetaBlocks extends ItemBlock{
 	public String getItemNameIS(ItemStack itemstack) 
 	{
 		String name = "";
-		switch(itemstack.getItemDamage()) 
-		{
-			case 0: 
-			{
-				name = "1";
-				break;
-			}
-			case 1: 
-			{ 
-				name = "2"; 
-				break;
-			}
-			case 2:
-			{
-				name = "3";
-			}
-			default: name = "0";
-		}
+		name = blockNames[itemstack.getItemDamage()];
 		return getItemName() + "." + name;
 	}
 	 

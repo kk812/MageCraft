@@ -37,12 +37,12 @@ public class Magecraft_Main {
 	public void load(FMLInitializationEvent event)
 	{
 		proxy.registerRenderThings();
-		blocks = new Magecraft.common.Blocks.BlocksFile(BlockID, 0, Material.rock).setStepSound(Block.soundStoneFootstep).setHardness(3F).setResistance(1.0F).setBlockName("oreblock");;
+		blocks = new Magecraft.common.Blocks.BlocksFile(BlockID, 0, Material.rock).setStepSound(Block.soundStoneFootstep).setHardness(3F).setResistance(1.0F).setBlockName("blocks");;
 		Item.itemsList[BlockID] = new Magecraft.common.Blocks.MetaBlocks(BlockID-256, blocks).setItemName("Blocks");
 		
-		LanguageRegistry.instance().addStringLocalization("tile.blocks.1", "block 1");
-		LanguageRegistry.instance().addStringLocalization("tile.blocks.2", "block 2");
-		LanguageRegistry.instance().addStringLocalization("tile.blocks.3", "block 3");
+		LanguageRegistry.instance().addStringLocalization("tile.blocks.Verinite Ore.name", "Verinite Ore");
+		LanguageRegistry.instance().addStringLocalization("tile.blocks.Verinite Block.name", "Verinite Block");
+		LanguageRegistry.instance().addStringLocalization("tile.blocks.OtherBlock.name", "OtherBlock");
 	}
 	
 }
