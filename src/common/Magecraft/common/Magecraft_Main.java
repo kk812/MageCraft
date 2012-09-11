@@ -31,7 +31,7 @@ public class Magecraft_Main {
 	public static Block blocks;
 	
 	
-	@SidedProxy(clientSide = "Magecraft.Client.ClientProxyMagecraft", serverSide = "Magecraft.Common.CommonProxyMagecraft")
+	@SidedProxy(clientSide = "Magecraft.Common.ClientProxyMagecraft", serverSide = "Magecraft.Common.CommonProxyMagecraft")
 	public static CommonProxyMagecraft proxy;
 	
 	
