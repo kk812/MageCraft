@@ -8,6 +8,7 @@ public class Magecraft_Items
 	
 	public Item veriniteChunk;
 	public Item veriniteIngot;
+	public Item veriniteEssence;
 	
 	private Magecraft_Items()
 	{
@@ -29,12 +30,14 @@ public class Magecraft_Items
 	{
 		veriniteChunk = new VeriniteChunk(550).setIconIndex(0).setItemName("VeriniteChunk");
 		veriniteIngot = new VeriniteIngot(551).setIconIndex(1).setItemName("VeriniteIngot");
+		veriniteEssence = new VeriniteEssence(552).setIconIndex(2).setItemName("VeriniteEssence");
 	}
 	
 	public void nameItems()
 	{
 		LanguageRegistry.addName(veriniteChunk, "Verinite Chunk");
 		LanguageRegistry.addName(veriniteIngot, "Verinite Ingot");
+		LanguageRegistry.addName(veriniteEssence, "Verinite Essence");
 	}
 	
 	
