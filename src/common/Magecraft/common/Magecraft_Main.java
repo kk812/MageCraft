@@ -48,7 +48,6 @@ public class Magecraft_Main {
 		
 		LanguageRegistry.instance().addStringLocalization("tile.blocks.Verinite Ore.name", "Verinite Ore");
 		LanguageRegistry.instance().addStringLocalization("tile.blocks.Verinite Block.name", "Verinite Block");
-		LanguageRegistry.instance().addStringLocalization("tile.blocks.OtherBlock.name", "OtherBlock");
 		
 		Magecraft_Items.getInstance().instantiateItems();
 		Magecraft_Items.getInstance().nameItems();

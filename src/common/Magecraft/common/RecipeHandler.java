@@ -1,5 +1,11 @@
 package Magecraft.common;
 
+import Magecraft.common.Items.Magecraft_Items;
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.src.Block;
+import net.minecraft.src.Item;
+import net.minecraft.src.ItemStack;
+
 public class RecipeHandler {
 	private static RecipeHandler instance;
 	
@@ -20,7 +26,7 @@ public class RecipeHandler {
 	
 	public void addCraftingTableRecipes()
 	{
-		
+		GameRegistry.addRecipe(new ItemStack(/*What should I put here*/), new Object[]{"XXX", "X X", "XXX", 'X', Magecraft_Items.getInstance().veriniteIngot.shiftedIndex});
 	}
 	
 	public void addShapelessRecipes()
