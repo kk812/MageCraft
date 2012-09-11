@@ -1,7 +1,7 @@
-package Magecraft.common;
+package Magecraft.Common;
 
-import Magecraft.common.Blocks.BlocksFile;
-import Magecraft.common.Items.Magecraft_Items;
+import Magecraft.Common.Blocks.BlocksFile;
+import Magecraft.Common.Items.Magecraft_Items;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.src.Block;
 import net.minecraft.src.Item;

@@ -1,4 +1,4 @@
-package Magecraft.common;
+package Magecraft.Common;
 
 import net.minecraft.src.Block;
 import net.minecraft.src.Item;
@@ -19,8 +19,8 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.LanguageRegistry;
-import Magecraft.common.Items.Magecraft_Items;
-import Magecraft.common.Blocks.BlocksFile;
+import Magecraft.Common.Items.Magecraft_Items;
+import Magecraft.Common.Blocks.BlocksFile;
 
 @Mod(modid = "FMC", name = "MageCraft", version = ".01 Alpha")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -31,7 +31,7 @@ public class Magecraft_Main {
 	public static Block blocks;
 	
 	
-	@SidedProxy(clientSide = "Magecraft.client.ClientProxyMagecraft", serverSide = "Magecraft.common.CommonProxyMagecraft")
+	@SidedProxy(clientSide = "Magecraft.Client.ClientProxyMagecraft", serverSide = "Magecraft.Common.CommonProxyMagecraft")
 	public static CommonProxyMagecraft proxy;
 	
 	
@@ -44,7 +44,7 @@ public class Magecraft_Main {
 		
 		
 		blocks = new BlocksFile(BlockID, 0).setStepSound(Block.soundStoneFootstep).setHardness(3F).setResistance(1.0F).setBlockName("blocks");;
-		Item.itemsList[BlockID] = new Magecraft.common.Blocks.MetaBlocks(BlockID-256, blocks).setItemName("Blocks");
+		Item.itemsList[BlockID] = new Magecraft.Common.Blocks.MetaBlocks(BlockID-256, blocks).setItemName("Blocks");
 		
 		LanguageRegistry.instance().addStringLocalization("tile.blocks.Verinite Ore.name", "Verinite Ore");
 		LanguageRegistry.instance().addStringLocalization("tile.blocks.Verinite Block.name", "Verinite Block");

@@ -1,4 +1,4 @@
-package Magecraft.common.Blocks;
+package Magecraft.Common.Blocks;
 
 import net.minecraft.src.Block;
 import net.minecraft.src.ItemBlock;

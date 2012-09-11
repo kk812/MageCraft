@@ -1,4 +1,4 @@
-package Magecraft.common.Items;
+package Magecraft.Common.Items;
 
 import net.minecraft.src.CreativeTabs;
 import net.minecraft.src.Item;

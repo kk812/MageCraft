@@ -1,4 +1,4 @@
-package Magecraft.common;
+package Magecraft.Common;
 
 public class CommonProxyMagecraft 
 {

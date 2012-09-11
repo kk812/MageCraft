@@ -1,7 +1,7 @@
-package Magecraft.client;
+package Magecraft.Client;
 
 import net.minecraftforge.client.MinecraftForgeClient;
-import Magecraft.common.CommonProxyMagecraft;
+import Magecraft.Common.CommonProxyMagecraft;
 
 public class ClientProxyMagecraft extends CommonProxyMagecraft
 {

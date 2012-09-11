@@ -1,11 +1,11 @@
-package Magecraft.common.Blocks;
+package Magecraft.Common.Blocks;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import Magecraft.common.Magecraft_Main;
-import Magecraft.common.Items.Magecraft_Items;
+import Magecraft.Common.Magecraft_Main;
+import Magecraft.Common.Items.Magecraft_Items;
 
 import cpw.mods.fml.common.Side;
 import cpw.mods.fml.common.asm.SideOnly;

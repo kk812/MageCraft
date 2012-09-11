@@ -1,4 +1,4 @@
-package Magecraft.common.Items;
+package Magecraft.Common.Items;
 
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.src.Item;
