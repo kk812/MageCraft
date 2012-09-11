@@ -5,7 +5,7 @@ import net.minecraft.src.Item;
 
 public class Magecraft_Items 
 {
-	
+	//Item variables
 	public Item veriniteChunk;
 	public Item veriniteIngot;
 	public Item veriniteEssence;

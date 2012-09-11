@@ -6,6 +6,7 @@ import net.minecraft.src.ItemStack;
 
 public class MetaBlocks extends ItemBlock{
 	
+	//names of blocks
 	static String[] blockNames = {"Verinite Ore", "Verinite Block"};
 	
 	public MetaBlocks(int par1, Block block) 

@@ -10,6 +10,8 @@ import net.minecraft.src.ItemStack;
 public class RecipeHandler {
 	private static RecipeHandler instance;
 	
+	//handles all mc recipies including my machine variables.
+	
 	public RecipeHandler()
 	{
 		

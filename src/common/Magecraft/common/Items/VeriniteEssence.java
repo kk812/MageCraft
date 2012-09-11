@@ -5,6 +5,7 @@ import net.minecraft.src.Item;
 
 public class VeriniteEssence extends Item
 {
+	//change
 	public VeriniteEssence(int par1) 
 	{
 		super(par1);

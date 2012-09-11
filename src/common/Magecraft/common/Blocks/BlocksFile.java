@@ -18,8 +18,9 @@ import net.minecraft.src.Material;
 import net.minecraft.src.World;
 
 public class BlocksFile extends Block{
-
-	public int ID = 0;
+	
+	
+	//should not be needed: public int ID = 0;
 	
 	public BlocksFile(int par1, int par2) 
 	{

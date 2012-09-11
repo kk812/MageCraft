@@ -4,6 +4,7 @@ import net.minecraftforge.client.MinecraftForgeClient;
 
 public class ClientProxyMagecraft extends CommonProxyMagecraft
 {
+	//in charge of textures and rendering
 	@Override
     public void registerRenderThings()
     {

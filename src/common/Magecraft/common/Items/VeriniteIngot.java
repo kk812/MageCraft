@@ -5,7 +5,7 @@ import net.minecraft.src.Item;
 
 public class VeriniteIngot extends Item
 {
-	
+	//change
 	public VeriniteIngot(int i)
 	{
 		super(i);

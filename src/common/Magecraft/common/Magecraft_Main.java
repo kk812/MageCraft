@@ -26,6 +26,7 @@ import Magecraft.Common.Blocks.BlocksFile;
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class Magecraft_Main {
 
+	//hardcoded id of block
 	public static int BlockID = 230;
 	
 	public static Block blocks;
