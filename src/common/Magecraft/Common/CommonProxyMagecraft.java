@@ -25,7 +25,7 @@ public class CommonProxyMagecraft implements IGuiHandler
 
 		if (tileEntity != null)
         {
-			return new ContainerOrb(player.inventory, tileEntity);
+			return new ContainerOrb(player.inventory, (TileEntityOrb) tileEntity);
         }
 		return null;
 	}
