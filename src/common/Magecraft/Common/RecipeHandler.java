@@ -32,6 +32,7 @@ public class RecipeHandler {
 		GameRegistry.addRecipe(new ItemStack(Magecraft_Main.blocks, 1, 1), new Object[]{"XXX", "X X", "XXX", 'X', Magecraft_Items.getInstance().veriniteIngot});
 		GameRegistry.addRecipe(new ItemStack(Magecraft_Items.getInstance().veriniteIngot, 8), new Object[]{"X", 'X', new ItemStack(Magecraft_Main.blocks, 1, 1)});
 		GameRegistry.addRecipe(new ItemStack(Magecraft_Items.getInstance().veriniteEssence, 8), new Object[]{"X X", " X ", 'X', Magecraft_Items.getInstance().veriniteIngot});
+		GameRegistry.addRecipe(new ItemStack(Magecraft_Main.blockOrb, 1), new Object[] {"X", 'X', Block.dirt});
 	}
 	
 	public void addShapelessRecipes()
