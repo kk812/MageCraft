@@ -5,6 +5,7 @@ import net.minecraft.src.Item;
 import net.minecraft.src.ItemStack;
 import net.minecraftforge.common.DungeonHooks;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -24,17 +25,19 @@ import Magecraft.Common.Items.Magecraft_Items;
 import Magecraft.Common.Blocks.BlockOrb;
 import Magecraft.Common.Blocks.BlocksFile;
 
-@Mod(modid = "FMC", name = "MageCraft", version = ".01 Alpha")
-@NetworkMod(clientSideRequired = true, serverSideRequired = false)
-public class Magecraft_Main {
 
+@NetworkMod(clientSideRequired = true, serverSideRequired = false)
+@Mod(modid = "FMC", name = "MageCraft", version = ".01 Alpha")
+public class Magecraft_Main {
+	
+	@Instance 
+	public static Magecraft_Main instance;
+	
 	//hardcoded id of block
 	public static int BlockID = 230;
 	
 	public static Block blocks;
 	public static Block blockOrb;
-	
-	public static Magecraft_Main instance = new Magecraft_Main();
 	
 	
 	@SidedProxy(clientSide = "Magecraft.Common.ClientProxyMagecraft", serverSide = "Magecraft.Common.CommonProxyMagecraft")

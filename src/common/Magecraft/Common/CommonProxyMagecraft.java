@@ -19,34 +19,25 @@ public class CommonProxyMagecraft implements IGuiHandler
     }
 
 	@Override
-	public Object getServerGuiElement(int ID, EntityPlayer player, World world,
-			int x, int y, int z) 
+	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) 
 	{
 		TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
 
 		if (tileEntity != null)
         {
-			if(ID == 0)
-			{
-				return new ContainerOrb(player.inventory, ((TileEntityOrb)tileEntity));
-				
-			}
+			return new ContainerOrb(player.inventory, ((TileEntityOrb)tileEntity));
         }
 		return null;
 	}
 
 	@Override
-	public Object getClientGuiElement(int ID, EntityPlayer player, World world,
-			int x, int y, int z) 
+	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) 
 	{
 		TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
 
 		if (tileEntity != null)
         {
-			if(ID == 0)
-			{
-				return new GuiOrb(player.inventory, ((TileEntityOrb)tileEntity));
-			}
+			return new GuiOrb(player.inventory, ((TileEntityOrb)tileEntity));
         }
 
 		return null;
