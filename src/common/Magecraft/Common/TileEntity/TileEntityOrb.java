@@ -14,6 +14,8 @@ public class TileEntityOrb extends TileEntity implements IInventory
 {
 	public ItemStack[] orbItemStacks;
 	
+	private int tickCounter = 0;
+	
 	public TileEntityOrb()
 	{
 		orbItemStacks = new ItemStack[4];
@@ -22,19 +24,63 @@ public class TileEntityOrb extends TileEntity implements IInventory
 	@Override
 	public void updateEntity()
 	{
+		tickCounter++;
 		super.updateEntity();
-		canInbue();
+		if(tickCounter%20 == 0)
+		{
+			if(canInbue())
+			{
+				if(orbItemStacks[3] == null)
+				{
+					orbItemStacks[3] = InbuenerRecipeHandler.getInstance().getOutput(orbItemStacks[0], orbItemStacks[1], orbItemStacks[2]);
+				}
+				else
+				{
+					orbItemStacks[3].stackSize += InbuenerRecipeHandler.getInstance().getOutputNum(orbItemStacks[0], orbItemStacks[1], orbItemStacks[2]);
+				}
+			}
+		}
 	}
 	
 	private boolean canInbue()
 	{
+		ItemStack container;
 		if(orbItemStacks != null)
 		{
 			if(orbItemStacks[0] != null && orbItemStacks[1] != null && orbItemStacks[2] != null)
 			{
-				for(int a = 0; a < orbItemStacks.length-1; a++)
+				container = InbuenerRecipeHandler.getInstance().getOutput(orbItemStacks[0], orbItemStacks[1], orbItemStacks[2]);
+				if(container != null)
 				{
-					System.out.println("a: " + a + ", Item name: " + orbItemStacks[a]);
+					if(orbItemStacks[3] != null)
+					{
+						if(orbItemStacks[3].getItem() == container.getItem())
+						{
+							System.out.println("Stack Limit: " + container.getItem().getItemStackLimit());
+							System.out.println("Total here: "+orbItemStacks[3].stackSize);
+							System.out.println("Total that will get created: "+InbuenerRecipeHandler.getInstance().getOutputNum(orbItemStacks[0], orbItemStacks[1], orbItemStacks[2]));
+							if(container.getItem().getItemStackLimit() >=  orbItemStacks[3].stackSize + InbuenerRecipeHandler.getInstance().getOutputNum(orbItemStacks[0], orbItemStacks[1], orbItemStacks[2]))
+							{
+								return true;
+							}
+							else
+							{
+								return false;
+							}
+						}
+						else
+						{
+							return false;
+						}
+					}
+					else
+					{
+						return true;
+					}
+				}
+				else
+				{
+					return false;
 				}
 			}
 		}

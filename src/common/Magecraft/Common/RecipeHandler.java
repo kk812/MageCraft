@@ -47,6 +47,6 @@ public class RecipeHandler {
 
 	public void addInbuenerRecipes(InbuenerRecipeHandler i) 
 	{
-		i.addRecipe(new RecipieInbuenerObj(Item.ingotIron, 2, Magecraft_Items.getInstance().veriniteEssence, 4, Magecraft_Items.getInstance().veriniteChunk, 2, new ItemStack(Magecraft_Items.getInstance().veriniteIngot, 2)));
+		i.addRecipe(new RecipieInbuenerObj(new ItemStack(Magecraft_Items.getInstance().veriniteChunk, 2), new ItemStack(Item.ingotIron, 2), new ItemStack(Magecraft_Items.getInstance().veriniteEssence, 4), new ItemStack(Magecraft_Items.getInstance().veriniteIngot, 4)));
 	}
 }

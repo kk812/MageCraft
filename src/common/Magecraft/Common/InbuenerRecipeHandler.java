@@ -31,30 +31,33 @@ public class InbuenerRecipeHandler
 		recipies.add(obj);
 	}
 	
-	public ItemStack getOutput(Item par1, int par2, Item par3, int par4, Item par5, int par6)
+	public ItemStack getOutput(ItemStack par1, ItemStack par2, ItemStack par3)
 	{
 		for(int a = 0; a < recipies.size(); a++)
 		{
-			if(recipies.get(a).getExtra() == par1)
+			if(recipies.get(a).getShard() == par1.getItem() && recipies.get(a).getExtra() == par2.getItem() && recipies.get(a).getEssence() == par3.getItem())
 			{
-				if(recipies.get(a).getNumExtra() <= par2)
+				if(recipies.get(a).getNumShard() <= par1.stackSize && recipies.get(a).getNumExtra() <= par2.stackSize && recipies.get(a).getNumEssence() <= par3.stackSize)
 				{
-					if(recipies.get(a).getEssence() == par3)
-					{
-						if(recipies.get(a).getNumEssence() <= par4)
-						{
-							if(recipies.get(a).getShard() == par5)
-							{
-								if(recipies.get(a).getNumShard() <= par6)
-								{
-									return recipies.get(a).output();
-								}
-							}
-						}
-					}
+					return recipies.get(a).output();
 				}
 			}
 		}
 		return null;
+	}
+	
+	public int getOutputNum(ItemStack par1, ItemStack par2, ItemStack par3)
+	{
+		for(int a = 0; a < recipies.size(); a++)
+		{
+			if(recipies.get(a).getShard() == par1.getItem() && recipies.get(a).getExtra() == par2.getItem() && recipies.get(a).getEssence() == par3.getItem())
+			{
+				if(recipies.get(a).getNumShard() <= par1.stackSize && recipies.get(a).getNumExtra() <= par2.stackSize && recipies.get(a).getNumEssence() <= par3.stackSize)
+				{
+					return recipies.get(a).output().stackSize;
+				}
+			}
+		}
+		return 0;
 	}
 }

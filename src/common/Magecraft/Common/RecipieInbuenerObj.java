@@ -14,15 +14,15 @@ public class RecipieInbuenerObj
 	
 	private ItemStack output;
 	
-	public RecipieInbuenerObj(Item par1, int par2, Item par3, int par4, Item par5, int par6, ItemStack par7)
+	public RecipieInbuenerObj(ItemStack par1, ItemStack par2, ItemStack par3, ItemStack par4)
 	{
-		extra = par1;
-		numExtra = par2;
-		essence = par3;
-		numEssence = par4;
-		shard = par5;
-		numShard = par6;
-		output = par7;
+		shard = par1.getItem();
+		numShard = par1.stackSize;
+		extra = par2.getItem();
+		numExtra = par2.stackSize;
+		essence = par3.getItem();
+		numEssence = par3.stackSize;
+		output = par4;
 	}
 	
 	public Item getExtra()
