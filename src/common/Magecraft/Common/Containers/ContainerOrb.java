@@ -14,9 +14,10 @@ public class ContainerOrb extends Container{
 
 	public ContainerOrb(InventoryPlayer par1InventoryPlayer, TileEntityOrb te)
     {
-		this.addSlotToContainer(new Slot(te, 0, 56, 17));
-        this.addSlotToContainer(new Slot(te, 1, 56, 53));
-        this.addSlotToContainer(new SlotOrb(par1InventoryPlayer.player, te, 2, 116, 35));
+		this.addSlotToContainer(new Slot(te, 0, 80, 13));
+        this.addSlotToContainer(new Slot(te, 1, 44, 51));
+        this.addSlotToContainer(new Slot(te, 2, 116, 51));
+        this.addSlotToContainer(new SlotOrb(par1InventoryPlayer.player, te, 3, 80, 51));
         
         for (int var3 = 0; var3 < 3; ++var3)
         {

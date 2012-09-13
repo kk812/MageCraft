@@ -44,5 +44,9 @@ public class RecipeHandler {
 	{
 		GameRegistry.addSmelting(Magecraft_Items.getInstance().veriniteChunk.shiftedIndex, new ItemStack(Magecraft_Items.getInstance().veriniteIngot), 0.1F); 
 	}
-	
+
+	public void addInbuenerRecipes(InbuenerRecipeHandler i) 
+	{
+		i.addRecipe(new RecipieInbuenerObj(Item.ingotIron, 2, 4, new ItemStack(Magecraft_Items.getInstance().veriniteIngot, 2)));
+	}
 }

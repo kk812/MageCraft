@@ -22,6 +22,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import Magecraft.Common.Items.Magecraft_Items;
+import Magecraft.Common.TileEntity.TileEntityOrb;
 import Magecraft.Common.Blocks.BlockOrb;
 import Magecraft.Common.Blocks.BlocksFile;
 
@@ -50,6 +51,7 @@ public class Magecraft_Main {
 		proxy.registerRenderThings();
 		Magecraft_Items.createInstance();
 		RecipeHandler.createInstance();
+		InbuenerRecipeHandler.createInstance();
 		
 		NetworkRegistry.instance().registerGuiHandler(this, this.proxy);
 		
@@ -60,6 +62,7 @@ public class Magecraft_Main {
 		GameRegistry.registerBlock(blockOrb);
 		LanguageRegistry.addName(blockOrb, "Your Block"); 
 		
+		GameRegistry.registerTileEntity(TileEntityOrb.class,"tileEntityOrb");
 		
 		LanguageRegistry.instance().addStringLocalization("tile.blocks.Verinite Ore.name", "Verinite Ore");
 		LanguageRegistry.instance().addStringLocalization("tile.blocks.Verinite Block.name", "Verinite Block");
@@ -70,6 +73,8 @@ public class Magecraft_Main {
 		RecipeHandler.getInstance().addCraftingTableRecipes();
 		RecipeHandler.getInstance().addShapelessRecipes();
 		RecipeHandler.getInstance().addFurnaceRecipes();
+		RecipeHandler.getInstance().addInbuenerRecipes(InbuenerRecipeHandler.getInstance());
+		
 		
 	}
 	

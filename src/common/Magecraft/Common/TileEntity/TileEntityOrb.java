@@ -1,5 +1,8 @@
 package Magecraft.Common.TileEntity;
 
+import Magecraft.Common.InbuenerRecipeHandler;
+import Magecraft.Common.Items.Magecraft_Items;
+import net.minecraft.src.Block;
 import net.minecraft.src.EntityPlayer;
 import net.minecraft.src.IInventory;
 import net.minecraft.src.ItemStack;
@@ -13,12 +16,48 @@ public class TileEntityOrb extends TileEntity implements IInventory
 	
 	public TileEntityOrb()
 	{
-		orbItemStacks = new ItemStack[3];
+		orbItemStacks = new ItemStack[4];
 	}
 	
+	@Override
 	public void updateEntity()
 	{
+		System.out.println();
 		super.updateEntity();
+		if(orbItemStacks != null)
+		{
+			if(orbItemStacks[0] != null)
+			{
+				if(orbItemStacks[1] != null)
+				{
+					if(orbItemStacks[2] != null)
+					{
+						if(InbuenerRecipeHandler.getInstance().getOutput(orbItemStacks[1].getItem(), orbItemStacks[1].stackSize, orbItemStacks[2].stackSize) != null)
+						{
+							if(orbItemStacks[3] == null)
+							{
+								orbItemStacks[3] = InbuenerRecipeHandler.getInstance().getOutput(orbItemStacks[1].getItem(), orbItemStacks[1].stackSize, orbItemStacks[2].stackSize);
+							}
+							else
+							{
+								if(orbItemStacks[3].getItem() == InbuenerRecipeHandler.getInstance().getOutput(orbItemStacks[1].getItem(), orbItemStacks[1].stackSize, orbItemStacks[2].stackSize).getItem())
+								{
+									if(orbItemStacks[3].stackSize < 64)
+									{
+										orbItemStacks[3].stackSize++;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	private void canInbue()
+	{
+		
 	}
 
 	@Override
@@ -85,9 +124,9 @@ public class TileEntityOrb extends TileEntity implements IInventory
     public void readFromNBT(NBTTagCompound tagCompound) 
     {
     	super.readFromNBT(tagCompound);
-        NBTTagList var2 = tagCompound.getTagList("Items");
+        NBTTagList var2 = tagCompound.getTagList("Orb");
         this.orbItemStacks = new ItemStack[this.getSizeInventory()];
-
+        System.out.println(var2.tagCount());
         for (int var3 = 0; var3 < var2.tagCount(); ++var3)
         {
             NBTTagCompound var4 = (NBTTagCompound)var2.tagAt(var3);
