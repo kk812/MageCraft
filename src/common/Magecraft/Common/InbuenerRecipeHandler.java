@@ -31,7 +31,7 @@ public class InbuenerRecipeHandler
 		recipies.add(obj);
 	}
 	
-	public ItemStack getOutput(Item par1, int par2, int par3)
+	public ItemStack getOutput(Item par1, int par2, Item par3, int par4, Item par5, int par6)
 	{
 		for(int a = 0; a < recipies.size(); a++)
 		{
@@ -39,9 +39,18 @@ public class InbuenerRecipeHandler
 			{
 				if(recipies.get(a).getNumExtra() <= par2)
 				{
-					if(recipies.get(a).getNumEssence() <= par3)
+					if(recipies.get(a).getEssence() == par3)
 					{
-						return recipies.get(a).output();
+						if(recipies.get(a).getNumEssence() <= par4)
+						{
+							if(recipies.get(a).getShard() == par5)
+							{
+								if(recipies.get(a).getNumShard() <= par6)
+								{
+									return recipies.get(a).output();
+								}
+							}
+						}
 					}
 				}
 			}

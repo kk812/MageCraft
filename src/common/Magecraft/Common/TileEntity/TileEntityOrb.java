@@ -22,42 +22,23 @@ public class TileEntityOrb extends TileEntity implements IInventory
 	@Override
 	public void updateEntity()
 	{
-		System.out.println();
 		super.updateEntity();
+		canInbue();
+	}
+	
+	private boolean canInbue()
+	{
 		if(orbItemStacks != null)
 		{
-			if(orbItemStacks[0] != null)
+			if(orbItemStacks[0] != null && orbItemStacks[1] != null && orbItemStacks[2] != null)
 			{
-				if(orbItemStacks[1] != null)
+				for(int a = 0; a < orbItemStacks.length-1; a++)
 				{
-					if(orbItemStacks[2] != null)
-					{
-						if(InbuenerRecipeHandler.getInstance().getOutput(orbItemStacks[1].getItem(), orbItemStacks[1].stackSize, orbItemStacks[2].stackSize) != null)
-						{
-							if(orbItemStacks[3] == null)
-							{
-								orbItemStacks[3] = InbuenerRecipeHandler.getInstance().getOutput(orbItemStacks[1].getItem(), orbItemStacks[1].stackSize, orbItemStacks[2].stackSize);
-							}
-							else
-							{
-								if(orbItemStacks[3].getItem() == InbuenerRecipeHandler.getInstance().getOutput(orbItemStacks[1].getItem(), orbItemStacks[1].stackSize, orbItemStacks[2].stackSize).getItem())
-								{
-									if(orbItemStacks[3].stackSize < 64)
-									{
-										orbItemStacks[3].stackSize++;
-									}
-								}
-							}
-						}
-					}
+					System.out.println("a: " + a + ", Item name: " + orbItemStacks[a]);
 				}
 			}
 		}
-	}
-	
-	private void canInbue()
-	{
-		
+		return false;
 	}
 
 	@Override
