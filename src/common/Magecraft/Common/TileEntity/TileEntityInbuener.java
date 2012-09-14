@@ -10,13 +10,16 @@ import net.minecraft.src.NBTTagCompound;
 import net.minecraft.src.NBTTagList;
 import net.minecraft.src.TileEntity;
 
-public class TileEntityOrb extends TileEntity implements IInventory
+public class TileEntityInbuener extends TileEntity implements IInventory
 {
-	public ItemStack[] orbItemStacks;
-	
+	private boolean inbuenerCooking = false;
 	private int tickCounter = 0;
 	
-	public TileEntityOrb()
+	public ItemStack[] orbItemStacks;
+	
+	
+	
+	public TileEntityInbuener()
 	{
 		orbItemStacks = new ItemStack[4];
 	}
@@ -24,19 +27,61 @@ public class TileEntityOrb extends TileEntity implements IInventory
 	@Override
 	public void updateEntity()
 	{
-		tickCounter++;
+		int one;
+		int two;
+		int three;
 		super.updateEntity();
-		if(tickCounter%20 == 0)
+		System.out.println("Ticks" + tickCounter);
+		if(canInbue())
 		{
-			if(canInbue())
+			if(this.inbuenerCooking == false)
 			{
-				if(orbItemStacks[3] == null)
+				this.inbuenerCooking = true;
+				tickCounter = 0;
+			}
+			else
+			{
+				tickCounter++;
+				if(tickCounter == 200)
 				{
-					orbItemStacks[3] = InbuenerRecipeHandler.getInstance().getOutput(orbItemStacks[0], orbItemStacks[1], orbItemStacks[2]);
-				}
-				else
-				{
-					orbItemStacks[3].stackSize += InbuenerRecipeHandler.getInstance().getOutputNum(orbItemStacks[0], orbItemStacks[1], orbItemStacks[2]);
+					this.inbuenerCooking = false;
+					if(orbItemStacks[3] == null)
+					{
+						orbItemStacks[3] = InbuenerRecipeHandler.getInstance().getOutput(orbItemStacks[0], orbItemStacks[1], orbItemStacks[2]);
+					}
+					else
+					{
+						orbItemStacks[3].stackSize += InbuenerRecipeHandler.getInstance().getOutputNum(orbItemStacks[0], orbItemStacks[1], orbItemStacks[2]);
+					}
+					//cache amounts for each slot to remove.
+					one = InbuenerRecipeHandler.getInstance().getShardNum(orbItemStacks[0], orbItemStacks[1], orbItemStacks[2]);
+					two = InbuenerRecipeHandler.getInstance().getExtraNum(orbItemStacks[0], orbItemStacks[1], orbItemStacks[2]);
+					three = InbuenerRecipeHandler.getInstance().getEssenceNum(orbItemStacks[0], orbItemStacks[1], orbItemStacks[2]);
+					
+					if(orbItemStacks[0].stackSize > one)
+					{
+						orbItemStacks[0].stackSize = orbItemStacks[0].stackSize - one;
+					}
+					else
+					{
+						orbItemStacks[0] = null;
+					}
+					if(orbItemStacks[1].stackSize > two)
+					{
+						orbItemStacks[1].stackSize = orbItemStacks[1].stackSize - two;
+					}
+					else
+					{
+						orbItemStacks[1] = null;
+					}
+					if(orbItemStacks[2].stackSize > three)
+					{
+						orbItemStacks[2].stackSize = orbItemStacks[2].stackSize - three;
+					}
+					else
+					{
+						orbItemStacks[2] = null;
+					}
 				}
 			}
 		}
@@ -56,9 +101,6 @@ public class TileEntityOrb extends TileEntity implements IInventory
 					{
 						if(orbItemStacks[3].getItem() == container.getItem())
 						{
-							System.out.println("Stack Limit: " + container.getItem().getItemStackLimit());
-							System.out.println("Total here: "+orbItemStacks[3].stackSize);
-							System.out.println("Total that will get created: "+InbuenerRecipeHandler.getInstance().getOutputNum(orbItemStacks[0], orbItemStacks[1], orbItemStacks[2]));
 							if(container.getItem().getItemStackLimit() >=  orbItemStacks[3].stackSize + InbuenerRecipeHandler.getInstance().getOutputNum(orbItemStacks[0], orbItemStacks[1], orbItemStacks[2]))
 							{
 								return true;
@@ -87,6 +129,11 @@ public class TileEntityOrb extends TileEntity implements IInventory
 		return false;
 	}
 
+	public int getPercentDone()
+	{
+		return 0;
+	}
+	
 	@Override
     public int getSizeInventory() {
             return orbItemStacks.length;

@@ -12,9 +12,10 @@ public class RecipieInbuenerObj
 	private Item shard;
 	private int numShard;
 	
-	private ItemStack output;
+	private Item outputItem;
+	private int outputNum;
 	
-	public RecipieInbuenerObj(ItemStack par1, ItemStack par2, ItemStack par3, ItemStack par4)
+	public RecipieInbuenerObj(ItemStack par1, ItemStack par2, ItemStack par3, Item par4, int par5)
 	{
 		shard = par1.getItem();
 		numShard = par1.stackSize;
@@ -22,7 +23,8 @@ public class RecipieInbuenerObj
 		numExtra = par2.stackSize;
 		essence = par3.getItem();
 		numEssence = par3.stackSize;
-		output = par4;
+		outputItem = par4;
+		outputNum = par5;
 	}
 	
 	public Item getExtra()
@@ -55,8 +57,13 @@ public class RecipieInbuenerObj
 		return numShard;
 	}
 	
-	public ItemStack output()
+	public Item output()
 	{
-		return output;
+		return outputItem;
+	}
+	
+	public int outputNum()
+	{
+		return outputNum;
 	}
 }

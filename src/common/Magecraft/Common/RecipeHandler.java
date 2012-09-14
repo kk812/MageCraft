@@ -32,7 +32,7 @@ public class RecipeHandler {
 		GameRegistry.addRecipe(new ItemStack(Magecraft_Main.blocks, 1, 1), new Object[]{"XXX", "X X", "XXX", 'X', Magecraft_Items.getInstance().veriniteIngot});
 		GameRegistry.addRecipe(new ItemStack(Magecraft_Items.getInstance().veriniteIngot, 8), new Object[]{"X", 'X', new ItemStack(Magecraft_Main.blocks, 1, 1)});
 		GameRegistry.addRecipe(new ItemStack(Magecraft_Items.getInstance().veriniteEssence, 8), new Object[]{"X X", " X ", 'X', Magecraft_Items.getInstance().veriniteIngot});
-		GameRegistry.addRecipe(new ItemStack(Magecraft_Main.blockOrb, 1), new Object[] {"X", 'X', Block.dirt});
+		GameRegistry.addRecipe(new ItemStack(Magecraft_Main.blockInbuener, 1), new Object[] {"X", 'X', Block.dirt});
 	}
 	
 	public void addShapelessRecipes()
@@ -47,6 +47,6 @@ public class RecipeHandler {
 
 	public void addInbuenerRecipes(InbuenerRecipeHandler i) 
 	{
-		i.addRecipe(new RecipieInbuenerObj(new ItemStack(Magecraft_Items.getInstance().veriniteChunk, 2), new ItemStack(Item.ingotIron, 2), new ItemStack(Magecraft_Items.getInstance().veriniteEssence, 4), new ItemStack(Magecraft_Items.getInstance().veriniteIngot, 4)));
+		i.addRecipe(new RecipieInbuenerObj(new ItemStack(Magecraft_Items.getInstance().veriniteChunk, 2), new ItemStack(Item.ingotIron, 2), new ItemStack(Magecraft_Items.getInstance().veriniteEssence, 4), Magecraft_Items.getInstance().veriniteIngot, 4));
 	}
 }

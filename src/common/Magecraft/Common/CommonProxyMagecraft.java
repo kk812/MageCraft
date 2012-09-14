@@ -1,8 +1,8 @@
 package Magecraft.Common;
 
-import Magecraft.Common.Containers.ContainerOrb;
-import Magecraft.Common.GUI.GuiOrb;
-import Magecraft.Common.TileEntity.TileEntityOrb;
+import Magecraft.Common.Containers.ContainerInbuener;
+import Magecraft.Common.GUI.GuiInbuener;
+import Magecraft.Common.TileEntity.TileEntityInbuener;
 import net.minecraft.src.EntityPlayer;
 import net.minecraft.src.TileEntity;
 import net.minecraft.src.World;
@@ -25,7 +25,7 @@ public class CommonProxyMagecraft implements IGuiHandler
 
 		if (tileEntity != null)
         {
-			return new ContainerOrb(player.inventory, (TileEntityOrb) tileEntity);
+			return new ContainerInbuener(player.inventory, (TileEntityInbuener) tileEntity);
         }
 		return null;
 	}
@@ -37,7 +37,7 @@ public class CommonProxyMagecraft implements IGuiHandler
 
 		if (tileEntity != null)
         {
-			return new GuiOrb(player.inventory, ((TileEntityOrb)tileEntity));
+			return new GuiInbuener(player.inventory, ((TileEntityInbuener)tileEntity));
         }
 
 		return null;

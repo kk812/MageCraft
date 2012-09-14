@@ -22,8 +22,8 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import Magecraft.Common.Items.Magecraft_Items;
-import Magecraft.Common.TileEntity.TileEntityOrb;
-import Magecraft.Common.Blocks.BlockOrb;
+import Magecraft.Common.TileEntity.TileEntityInbuener;
+import Magecraft.Common.Blocks.BlockInbuener;
 import Magecraft.Common.Blocks.BlocksFile;
 
 
@@ -38,7 +38,7 @@ public class Magecraft_Main {
 	public static int BlockID = 230;
 	
 	public static Block blocks;
-	public static Block blockOrb;
+	public static Block blockInbuener;
 	
 	
 	@SidedProxy(clientSide = "Magecraft.Common.ClientProxyMagecraft", serverSide = "Magecraft.Common.CommonProxyMagecraft")
@@ -58,11 +58,11 @@ public class Magecraft_Main {
 		blocks = new BlocksFile(BlockID, 0).setStepSound(Block.soundStoneFootstep).setHardness(3F).setResistance(1.0F).setBlockName("blocks");;
 		Item.itemsList[BlockID] = new Magecraft.Common.Blocks.MetaBlocks(BlockID-256, blocks).setItemName("Blocks");
 		
-		blockOrb = new BlockOrb(231, Material.iron).setStepSound(Block.soundStoneFootstep).setHardness(3F).setResistance(1.0F).setBlockName("orbBlock");;
-		GameRegistry.registerBlock(blockOrb);
-		LanguageRegistry.addName(blockOrb, "Your Block"); 
+		blockInbuener = new BlockInbuener(231, Material.iron).setStepSound(Block.soundStoneFootstep).setHardness(3F).setResistance(1.0F).setBlockName("orbBlock");;
+		GameRegistry.registerBlock(blockInbuener);
+		LanguageRegistry.addName(blockInbuener, "Inbuener"); 
 		
-		GameRegistry.registerTileEntity(TileEntityOrb.class,"tileEntityOrb");
+		GameRegistry.registerTileEntity(TileEntityInbuener.class,"tileEntityOrb");
 		
 		LanguageRegistry.instance().addStringLocalization("tile.blocks.Verinite Ore.name", "Verinite Ore");
 		LanguageRegistry.instance().addStringLocalization("tile.blocks.Verinite Block.name", "Verinite Block");

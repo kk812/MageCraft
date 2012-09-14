@@ -3,7 +3,7 @@ package Magecraft.Common.Blocks;
 import java.util.Random;
 
 import Magecraft.Common.Magecraft_Main;
-import Magecraft.Common.TileEntity.TileEntityOrb;
+import Magecraft.Common.TileEntity.TileEntityInbuener;
 
 import cpw.mods.fml.common.Side;
 import cpw.mods.fml.common.asm.SideOnly;
@@ -16,9 +16,9 @@ import net.minecraft.src.TileEntity;
 import net.minecraft.src.TileEntityEnchantmentTable;
 import net.minecraft.src.World;
 
-public class BlockOrb extends BlockContainer{
+public class BlockInbuener extends BlockContainer{
 
-	public BlockOrb(int par1, Material par2Material) 
+	public BlockInbuener(int par1, Material par2Material) 
 	{
 		super(par1, par2Material);
 		super.blockIndexInTexture = 2;
@@ -47,7 +47,7 @@ public class BlockOrb extends BlockContainer{
 	@Override
 	public TileEntity createNewTileEntity(World var1) 
 	{
-		return new TileEntityOrb();
+		return new TileEntityInbuener();
 	}
 	
 	/**
@@ -61,7 +61,6 @@ public class BlockOrb extends BlockContainer{
         }
         else
         {
-        	System.out.println("Opening Gui");
         	par5EntityPlayer.openGui(Magecraft_Main.instance, 0, par1World, par2, par3, par4);
     		return true;
         }

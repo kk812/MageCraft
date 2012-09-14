@@ -11,13 +11,13 @@ import net.minecraft.src.ItemStack;
 import net.minecraft.src.MathHelper;
 import net.minecraft.src.Slot;
 
-public class SlotOrb extends Slot
+public class SlotInbuener extends Slot
 {
 
 	private EntityPlayer thePlayer;
 	private int field_75228_b;
 	
-	public SlotOrb(EntityPlayer par1EntityPlayer, IInventory par2Inventory, int par2, int par3, int par4) 
+	public SlotInbuener(EntityPlayer par1EntityPlayer, IInventory par2Inventory, int par2, int par3, int par4) 
 	{
 		super(par2Inventory, par2, par3, par4);
 		this.thePlayer = par1EntityPlayer;

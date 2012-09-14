@@ -2,19 +2,19 @@ package Magecraft.Common.GUI;
 
 import org.lwjgl.opengl.GL11;
 
-import Magecraft.Common.Containers.ContainerOrb;
-import Magecraft.Common.TileEntity.TileEntityOrb;
+import Magecraft.Common.Containers.ContainerInbuener;
+import Magecraft.Common.TileEntity.TileEntityInbuener;
 
 import net.minecraft.src.Container;
 import net.minecraft.src.GuiContainer;
 import net.minecraft.src.InventoryPlayer;
 
-public class GuiOrb extends GuiContainer
+public class GuiInbuener extends GuiContainer
 {
 
-	public GuiOrb(InventoryPlayer player, TileEntityOrb tileEntity) 
+	public GuiInbuener(InventoryPlayer player, TileEntityInbuener tileEntity) 
 	{
-		super(new ContainerOrb(player, tileEntity));
+		super(new ContainerInbuener(player, tileEntity));
 	}
 
 	@Override
@@ -30,7 +30,7 @@ public class GuiOrb extends GuiContainer
 	
 	@Override
 	protected void drawGuiContainerForegroundLayer(){
-		fontRenderer.drawString("Orb", 60, 6, 0x404040);
+		fontRenderer.drawString("Inbuener", 10, 10, 0x404040);
 	}
 
 }

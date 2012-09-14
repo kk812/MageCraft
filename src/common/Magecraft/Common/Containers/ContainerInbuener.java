@@ -1,7 +1,7 @@
 package Magecraft.Common.Containers;
 
-import Magecraft.Common.GUI.Slots.SlotOrb;
-import Magecraft.Common.TileEntity.TileEntityOrb;
+import Magecraft.Common.GUI.Slots.SlotInbuener;
+import Magecraft.Common.TileEntity.TileEntityInbuener;
 import net.minecraft.src.Container;
 import net.minecraft.src.EntityPlayer;
 import net.minecraft.src.InventoryPlayer;
@@ -10,14 +10,14 @@ import net.minecraft.src.Slot;
 import net.minecraft.src.TileEntity;
 
 
-public class ContainerOrb extends Container{
+public class ContainerInbuener extends Container{
 
-	public ContainerOrb(InventoryPlayer par1InventoryPlayer, TileEntityOrb te)
+	public ContainerInbuener(InventoryPlayer par1InventoryPlayer, TileEntityInbuener te)
     {
 		this.addSlotToContainer(new Slot(te, 0, 80, 13));
         this.addSlotToContainer(new Slot(te, 1, 44, 51));
         this.addSlotToContainer(new Slot(te, 2, 116, 51));
-        this.addSlotToContainer(new SlotOrb(par1InventoryPlayer.player, te, 3, 80, 51));
+        this.addSlotToContainer(new SlotInbuener(par1InventoryPlayer.player, te, 3, 80, 51));
         
         for (int var3 = 0; var3 < 3; ++var3)
         {
@@ -50,19 +50,23 @@ public class ContainerOrb extends Container{
                     stack = stackInSlot.copy();
 
                     //merges the item into player inventory since its in the tileEntity
-                    if (slot == 0) {
-                            if (!mergeItemStack(stackInSlot, 1,
-                                            inventorySlots.size(), true)) {
+                    if (slot == 0) 
+                    {
+                            if (!mergeItemStack(stackInSlot, 3, inventorySlots.size(), true)) {
                                     return null;
                             }
                     //places it into the tileEntity is possible since its in the player inventory
-                    } else if (!mergeItemStack(stackInSlot, 0, 1, false)) {
+                    } 
+                    else if (!mergeItemStack(stackInSlot, 0, 1, false)) 
+                    {
                             return null;
                     }
 
-                    if (stackInSlot.stackSize == 0) {
+                    if (stackInSlot.stackSize == 0) 
+                    {
                             slotObject.putStack(null);
-                    } else {
+                    } else 
+                    {
                             slotObject.onSlotChanged();
                     }
             }
